@@ -585,7 +585,7 @@ input[type=submit]:hover {
   }
 }
 
-/* Turn off flipcards on small screens */
+/* Turn on flipcards on large screens */
 
 @media screen and (min-width: 1100px) {
   .flip-card:hover .flip-card-inner,
@@ -605,7 +605,7 @@ input[type=submit]:hover {
 }
 }
 
-/* Adjust layout of images on homepage for mobile screens */
+/* Adjust layout of images on homepage for larger screens */
 
 @media screen and (min-width: 1000px) {
 
