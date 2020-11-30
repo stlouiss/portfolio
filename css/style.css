@@ -10,7 +10,7 @@
   100% { 
       opacity: 1; 
    } 
-} 
+}
 
 #animation-1{ 
   animation: fadeInAnimation ease 2s;
@@ -25,16 +25,54 @@
 }
 
 #animation-3{ 
-  animation: fadeInAnimation ease 8s;
+  animation: fadeInAnimation ease 7s;
   animation-iteration-count: 1; 
   animation-fill-mode: forwards; 
 } 
 
 #animation-4{ 
-  animation: fadeInAnimation ease 9s;
+  animation: fadeInAnimation ease 7s;
   animation-iteration-count: 1; 
   animation-fill-mode: forwards; 
 }
+
+/* Animation idea from the following webpage: https://css-tricks.com/almanac/properties/a/animation/ 
+(accessed November 30, 2020) */
+
+@keyframes stretch {
+  0% {
+    opacity: 0;
+    transform: scale(.01);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(0.75);
+  }
+}
+
+#animation-5 {
+  width: 75%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: stretch;
+  animation-duration: 4.25s; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#animation-6 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 32%;
+  animation-name: stretch;
+  animation-duration: 0.5s; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+
 
 /*Add media query to handle reduced-motion*/
 
@@ -63,6 +101,28 @@
     animation-iteration-count: none;
     animation-fill-mode: none;
    }
+
+   #animation-5 {
+    width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: none;
+    animation-duration: none; 
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+  }
+  
+  #animation-6 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 32%;
+    animation-name: none;
+    animation-duration: none; 
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+  }
+
   }
 
 /*-----------------------------------*/
@@ -100,7 +160,7 @@ h3{
 
 h4{  
   font-family: 'Lora', serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 100;
   font-style: italic;
   text-align: center;
@@ -118,7 +178,10 @@ img{
   margin-left: auto;
   margin-right: auto;
   width: 25%;
+  height: auto;
   padding-top: 10px;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
 }
 
 .gallery{
@@ -136,9 +199,68 @@ img{
   width: 75%;
   height: auto;
   padding-top: 0px;
-  margin-left:auto;
+  margin-left: auto;
   margin-right: auto;
 }
+
+/* I relied heavily on the following Stack Overflow page to learn how to write my CSS/HTML flipcard code:
+
+"CSS flip card: How can I activate the flip via tab, so it is keyboard accessible?" (accessed November 30, 2020),
+https://stackoverflow.com/questions/62418249/css-flip-card-how-can-i-activate-the-flip-via-tab-so-it-is-keyboard-accessible */
+
+
+
+.flip-card {
+  width: 60%;
+  height: auto;
+  background-color: white;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card:active .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+    transform: rotateX(-180deg);
+  }
+
+.flip-card-front,
+.flip-card-back {
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: white;
+  background-color: white;
+}
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  transform: rotateX(-180deg);
+  text-align: center;
+}
+
+.flip-card-back p{
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+/*-----------------------------------*/
+
 
 .second-gallery{
   display: flex;
@@ -159,6 +281,8 @@ img{
   margin-right: auto;
 }
 
+/*-----------------------------------*/
+
 footer{
   background-color: #232057;
   color: white;
@@ -176,7 +300,6 @@ footer{
   -webkit-text-decoration-style: dotted;
           text-decoration-style: dotted;
 }
-
 
 /* Navbar */
 
@@ -197,7 +320,6 @@ a.skip:focus{
   color: #0067FF;
   text-decoration-style: solid;
 }
-
 
 header{
   background: #046B64;
@@ -334,7 +456,7 @@ header{
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 900;
-  color: #white;
+  color: white;
   margin: 0;
   padding: 0;
   font-size: 42pt;
@@ -432,7 +554,104 @@ input[type=submit]:hover {
 }
 
 
+/* Turn off flipcards when animations are turned off */
 
 
+@media screen and (prefers-reduced-motion: reduce) {
 
 
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner,
+  .flip-card:active .flip-card-inner,
+  .flip-card:focus .flip-card-inner {
+      transform: rotateX(0deg);
+  }
+  
+
+  .flip-card-back {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    transform: rotateX(0deg);
+    text-align: center;
+  }
+}
+
+/* Turn off flipcards on small screens */
+
+@media screen and (max-width: 1100px) {
+
+
+    .flip-card:hover .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner,
+    .flip-card:active .flip-card-inner,
+    .flip-card:focus .flip-card-inner {
+        transform: rotateX(0deg);
+    }
+    
+  
+    .flip-card-back {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      transform: rotateX(0deg);
+      text-align: center;
+    }
+
+}
+
+/* Adjust layout of images on homepage for mobile screens */
+
+
+@media screen and (max-width: 1000px) {
+
+  .container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: 100%;
+    height: auto; 
+  }
+
+  .grid-img1{
+    border: 8px white solid;
+    margin: 10px;
+    width: 75%;
+    height: auto;
+    padding-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .grid-img2{
+    border: 8px white solid;
+    margin: 10px;
+    width: 75%;
+    height: auto;
+    padding-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .grid-img3{
+    border: 8px white solid;
+    margin: 10px;
+    width: 75%;
+    height: auto;
+    padding-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .grid-img4{
+    border: 8px white solid;
+    margin: 10px;
+    width: 75%;
+    height: auto;
+    padding-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
