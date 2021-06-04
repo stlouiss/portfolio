@@ -615,6 +615,13 @@ header{
   padding-top: 100px;
 }
 
+.parallax-p a:hover, a:focus{
+  color: #FEFFA9;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
 /* Contact Form */
 
 legend{ 
