@@ -615,6 +615,11 @@ header{
   padding-top: 100px;
 }
 
+.parallax-p a{
+  color: white;
+  text-decoration: none;
+}
+
 .parallax-p a:hover, a:focus{
   color: #FEFFA9;
   text-decoration: none;
