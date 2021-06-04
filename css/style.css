@@ -617,12 +617,13 @@ header{
 
 .parallax-p a{
   color: white;
+  font-weight: bold;
   text-decoration: none;
 }
 
 .parallax-p a:hover, a:focus{
   color: #FEFFA9;
-  text-decoration: none;
+  text-decoration: underline;
   -webkit-text-decoration-style: dotted;
           text-decoration-style: dotted;
 }
