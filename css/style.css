@@ -625,6 +625,7 @@ header{
   color: #FEFFA9;
   font-weight: 900;
   text-decoration: underline;
+  text-decoration-color: #FEFFA9;
   -webkit-text-decoration-style: solid;
           text-decoration-style: solid;
 }
