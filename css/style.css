@@ -626,8 +626,8 @@ header{
   font-weight: 900;
   text-decoration: underline;
   text-decoration-color: #FEFFA9;
-  -webkit-text-decoration-style: solid;
-          text-decoration-style: solid;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
 }
 
 
