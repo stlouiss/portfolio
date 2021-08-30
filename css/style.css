@@ -1,0 +1,1043 @@
+
+
+/* Animation idea from the following webpage: https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/
+(accessed November 7, 2020) */
+
+@keyframes fadeInAnimation { 
+  0% { 
+      opacity: 0; 
+  } 
+  100% { 
+      opacity: 1; 
+   } 
+}
+
+#animation-1{ 
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
+} 
+
+#animation-2{ 
+  animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
+}
+
+#animation-3{ 
+  animation: fadeInAnimation ease 7s;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
+} 
+
+#animation-4{ 
+  animation: fadeInAnimation ease 7s;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
+}
+
+/* Animation idea from the following webpage: https://css-tricks.com/almanac/properties/a/animation/ 
+(accessed November 30, 2020).*/
+
+/*Repeat animations written in order to fix accessibility violation discovered by Axe validator
+regarding same id attributes used within a single page. */
+
+@keyframes stretch {
+  0% {
+    opacity: 0;
+    transform: scale(.01);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(0.75);
+  }
+}
+
+#animation-5 {
+  width: 75%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: stretch;
+  animation-duration: 4.25s; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#animation-6 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 32%;
+  animation-name: stretch;
+  animation-duration: 0.5s; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#animation-7 {
+  width: 75%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: stretch;
+  animation-duration: 4.25s; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#animation-8 {
+  width: 75%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: stretch;
+  animation-duration: 4.25s; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#animation-9 {
+  width: 75%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: stretch;
+  animation-duration: 4.25s; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* Animation idea from the following webpage: "CSS wiggle/shake effect,"
+https://stackoverflow.com/questions/38132700/css-wiggle-shake-effect 
+(accessed November 30, 2020) */
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 10% { transform: rotate(0deg); }
+ 15% { transform: rotate(20deg); }
+ 25% { transform: rotate(-20deg); }
+ 35% { transform: rotate(0deg); }
+}
+
+#animation-10{
+  animation: wiggle;
+  animation-duration: 2.5s;
+  animation-iteration-count: 50;
+}
+
+
+
+/* Animation idea from the following webpage: "How to Shake an Image,"
+https://www.w3schools.com/howto/howto_css_shake_image.asp
+(accessed December 1, 2020) */
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  10% { transform: translate(-20px, 0px) rotate(0deg); }
+  20% { transform: translate(20px, 0px) rotate(0deg); }
+  30% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+#animation-11{
+  animation: shake;
+  animation-duration: 2.5s;
+  animation-iteration-count: 50;
+}
+
+/*-----------------------------------*/
+
+body{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+}
+
+h1{
+  font-size: 2em;
+  text-align: center;
+  line-height: 1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h2{
+  font-size: 1.5em;
+  text-align: center;
+  padding: 5px;
+}
+
+h3{
+  font-family: 'Lora', serif;
+  font-size: 2.5em;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h4{  
+  font-family: 'Lora', serif;
+  font-size: 1.3em;
+  font-weight: 100;
+  font-style: italic;
+  text-align: center;
+  padding: 5px;
+}
+
+p {
+  padding: 10px 30px 10px 30px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+img{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  height: auto;
+  padding-top: 10px;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+
+.gallery{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 100%;
+  height: auto; 
+}
+
+.gallery img{
+  border: 8px #167B32 solid;
+  margin: 10px;
+  width: 75%;
+  height: auto;
+  padding-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* I relied heavily on the following Stack Overflow page to learn how to write my CSS/HTML flipcard code:
+
+"CSS flip card: How can I activate the flip via tab, so it is keyboard accessible?" (accessed November 30, 2020),
+https://stackoverflow.com/questions/62418249/css-flip-card-how-can-i-activate-the-flip-via-tab-so-it-is-keyboard-accessible */
+
+/* Default setting for flipcards is OFF, following a mobile-first responsive design approach. Given that my flipcard images are linked
+to external webpages, I didn't want to create a usability challenge for users with touchscreens, who might get frustrated by the flipcard feature
+when trying to click on a linked image. */
+
+/* I turn the flipcards ON for larger screens in a media query below. */
+
+/*Repeat flipcards written in order to fix accessibility violation discovered by Axe validator
+regarding same id attributes used within a single page. */
+
+
+
+.flip-card {
+  width: 60%;
+  height: auto;
+  background-color: white;
+  perspective: 1000px;
+}
+
+.flip-card-inner-1 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-2 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-3 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-4 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-5 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-6 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-7 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-8 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner-9 {
+  background-color: white;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner-1,
+.flip-card:focus-within .flip-card-inner-1,
+.flip-card:active .flip-card-inner-1,
+.flip-card:focus .flip-card-inner-1 {
+    transform: rotateX(0deg);
+}
+
+.flip-card:hover .flip-card-inner-2,
+.flip-card:focus-within .flip-card-inner-2,
+.flip-card:active .flip-card-inner-2,
+.flip-card:focus .flip-card-inner-2 {
+    transform: rotateX(0deg);
+}
+
+.flip-card:hover .flip-card-inner-3,
+.flip-card:focus-within .flip-card-inner-3,
+.flip-card:active .flip-card-inner-3,
+.flip-card:focus .flip-card-inner-3 {
+    transform: rotateX(0deg);
+}
+
+.flip-card:hover .flip-card-inner-4,
+.flip-card:focus-within .flip-card-inner-4,
+.flip-card:active .flip-card-inner-4,
+.flip-card:focus .flip-card-inner-4 {
+    transform: rotateX(0deg);
+}
+
+.flip-card:hover .flip-card-inner-5,
+.flip-card:focus-within .flip-card-inner-5,
+.flip-card:active .flip-card-inner-5,
+.flip-card:focus .flip-card-inner-5 {
+    transform: rotateX(0deg);
+}
+
+.flip-card:hover .flip-card-inner-6,
+.flip-card:focus-within .flip-card-inner-6,
+.flip-card:active .flip-card-inner-6,
+.flip-card:focus .flip-card-inner-6 {
+    transform: rotateX(0deg);
+}
+
+.flip-card:hover .flip-card-inner-7,
+.flip-card:focus-within .flip-card-inner-7,
+.flip-card:active .flip-card-inner-7,
+.flip-card:focus .flip-card-inner-7 {
+    transform: rotateX(0deg);
+}
+
+.flip-card:hover .flip-card-inner-8,
+.flip-card:focus-within .flip-card-inner-8,
+.flip-card:active .flip-card-inner-8,
+.flip-card:focus .flip-card-inner-8 {
+    transform: rotateX(0deg);
+}
+
+.flip-card:hover .flip-card-inner-9,
+.flip-card:focus-within .flip-card-inner-9,
+.flip-card:active .flip-card-inner-9,
+.flip-card:focus .flip-card-inner-9 {
+    transform: rotateX(0deg);
+}
+
+
+.flip-card-front,
+.flip-card-back {
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: white;
+  background-color: white;
+}
+
+.flip-card-back {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  transform: rotateX(0deg);
+  text-align: center;
+}
+
+.flip-card-back p{
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+/*-----------------------------------*/
+
+
+.second-gallery{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 100%;
+  height: auto; 
+}
+
+.second-gallery img{
+  border: 1px white solid;
+  margin: 1px;
+  width: 75%;
+  height: auto;
+  padding-top: 0px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+/*-----------------------------------*/
+
+footer{
+  background-color: #232057;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.footer a{
+  color: white;
+}
+
+.footer a:hover, a:focus{
+  color: #FEFFA9;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
+/* Navbar */
+
+a.skip{
+  background-color: #E8DCDC;
+  text-decoration-color: #232057;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+a.skip:focus{
+  top:20px;
+  color: #0067FF;
+  text-decoration-style: solid;
+}
+
+header{
+  background: #046B64;
+  border-bottom: 10px solid #232057;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav_links{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.nav_item a{
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 16pt;
+  text-align: center;
+}
+
+.nav_item a:hover, a:focus{
+  color: #FEFFA9;
+  text-decoration: underline;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+}
+
+#active{
+  text-decoration-line: overline;
+}
+
+/* Grid information for homepage and contact form */
+
+.container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 100%;
+  height: auto; 
+}
+
+.container-2{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 0px;
+  align-items: center;
+}
+
+.index-img1{
+  border: 8px white solid;
+  margin: 10px;
+  width: 75%;
+  height: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index-img2{
+  border: 8px white solid;
+  margin: 10px;
+  width: 75%;
+  height: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index-img3{
+  border: 8px white solid;
+  margin: 10px;
+  width: 75%;
+  height: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index-img4{
+  border: 8px white solid;
+  margin: 10px;
+  width: 75%;
+  height: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-txt1{
+  grid-row: 1 / span 1;
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.grid-txt2{
+  grid-row: 2 / span 1;
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.parallax-img{
+  background-attachment: fixed;    
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;       
+  color: white;
+  height: 400px;           
+  background-image: url("../imgs/loc_reading_room.png");
+  grid-column: 1 / -1;
+  grid-row: 1 / auto; 
+}
+
+.parallax-p{
+  font-family: 'Open Sans';
+  font-style: normal;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 42pt;
+  -webkit-text-stroke-width: 2px;     /* Text outlining idea from https://css-tricks.com/adding-stroke-to-web-text/ (accessed November 7, 2020) */
+  -webkit-text-stroke-color: #000000;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.parallax-p a{
+  color: white;
+  text-decoration: none;
+}
+
+.parallax-p a:hover, a:focus{
+  color: #FEFFA9;
+  text-decoration: underline;
+  text-decoration-color: #FEFFA9;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
+
+/* Contact Form */
+
+legend{ 
+  font-size: 125%;
+  font-style: normal;
+  text-align: center;
+}
+
+label{
+  display: inline-block;
+  margin-right:10px;
+  width:15%;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+span{
+  margin-left:20%;
+  font-family: italic;
+  font-weight: bold;
+}
+
+textarea{
+  width: 100%;
+  height: 35vh;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+input[type=checkbox]{
+    display:inline;
+    width:inherit;
+}
+
+input[type=submit] {
+  background-color: #232057;
+  color: #FEFFA9;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (min-width: 770px) {
+  form{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  input{
+    width:80%;
+  }
+
+  textarea{
+    width:80%;
+    height: 25vh;
+ }
+ 
+ div + label{
+    line-height: 25vh;
+    vertical-align:top;
+ }
+}
+
+/* Turn on flipcards on larger screens */
+
+/*Repeat flipcards written in order to fix accessibility violation discovered by Axe validator
+regarding same id attributes used within a single page. */
+
+@media screen and (min-width: 1100px) {
+  .flip-card:hover .flip-card-inner-1,
+  .flip-card:focus-within .flip-card-inner-1,
+  .flip-card:active .flip-card-inner-1,
+  .flip-card:focus .flip-card-inner-1 {
+    transform: rotateX(-180deg);
+  }
+
+  .flip-card:hover .flip-card-inner-2,
+  .flip-card:focus-within .flip-card-inner-2,
+  .flip-card:active .flip-card-inner-2,
+  .flip-card:focus .flip-card-inner-2 {
+    transform: rotateX(-180deg);
+  }
+
+  .flip-card:hover .flip-card-inner-3,
+  .flip-card:focus-within .flip-card-inner-3,
+  .flip-card:active .flip-card-inner-3,
+  .flip-card:focus .flip-card-inner-3 {
+    transform: rotateX(-180deg);
+  }
+
+  .flip-card:hover .flip-card-inner-4,
+  .flip-card:focus-within .flip-card-inner-4,
+  .flip-card:active .flip-card-inner-4,
+  .flip-card:focus .flip-card-inner-4 {
+    transform: rotateX(-180deg);
+  }
+
+  .flip-card:hover .flip-card-inner-5,
+  .flip-card:focus-within .flip-card-inner-5,
+  .flip-card:active .flip-card-inner-5,
+  .flip-card:focus .flip-card-inner-5 {
+    transform: rotateX(-180deg);
+  }
+
+  .flip-card:hover .flip-card-inner-6,
+  .flip-card:focus-within .flip-card-inner-6,
+  .flip-card:active .flip-card-inner-6,
+  .flip-card:focus .flip-card-inner-6 {
+    transform: rotateX(-180deg);
+  }
+
+  .flip-card:hover .flip-card-inner-7,
+  .flip-card:focus-within .flip-card-inner-7,
+  .flip-card:active .flip-card-inner-7,
+  .flip-card:focus .flip-card-inner-7 {
+    transform: rotateX(-180deg);
+  }
+
+  .flip-card:hover .flip-card-inner-8,
+  .flip-card:focus-within .flip-card-inner-8,
+  .flip-card:active .flip-card-inner-8,
+  .flip-card:focus .flip-card-inner-8 {
+    transform: rotateX(-180deg);
+  }
+
+  .flip-card:hover .flip-card-inner-9,
+  .flip-card:focus-within .flip-card-inner-9,
+  .flip-card:active .flip-card-inner-9,
+  .flip-card:focus .flip-card-inner-9 {
+    transform: rotateX(-180deg);
+  }
+
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  transform: rotateX(-180deg);
+  text-align: center;
+  }
+
+}
+
+
+/* Add media query to handle reduced-motion*/
+
+/* Also turns off flipcards when animations are turned off */
+
+/*Repeat flipcards written in order to fix accessibility violation discovered by Axe validator
+regarding same id attributes used within a single page. */
+
+
+@media screen and (prefers-reduced-motion: reduce) {
+
+  #animation-1{
+    animation-name: none;
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+   }
+
+   #animation-2{
+    animation-name: none;
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+   }
+
+   #animation-3{
+    animation-name: none;
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+   }
+
+   #animation-4{
+    animation-name: none;
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+   }
+
+   #animation-5 {
+    width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: none;
+    animation-duration: none; 
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+  }
+  
+  #animation-6 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 32%;
+    animation-name: none;
+    animation-duration: none; 
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+  }
+
+  #animation-7 {
+    width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: none;
+    animation-duration: none; 
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+  }
+
+  #animation-8 {
+    width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: none;
+    animation-duration: none; 
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+  }
+
+  #animation-9 {
+    width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: none;
+    animation-duration: none; 
+    animation-iteration-count: none;
+    animation-fill-mode: none;
+  }
+
+  #animation-10{
+    animation: none;
+    animation-duration: none;
+    animation-iteration-count: none;
+  }
+
+  #animation-11{
+    animation: none;
+    animation-duration: none;
+    animation-iteration-count: none;
+  }
+
+
+  .flip-card:hover .flip-card-inner-1,
+  .flip-card:focus-within .flip-card-inner-1,
+  .flip-card:active .flip-card-inner-1,
+  .flip-card:focus .flip-card-inner-1 {
+      transform: rotateX(0deg);
+  }
+  
+  .flip-card:hover .flip-card-inner-2,
+  .flip-card:focus-within .flip-card-inner-2,
+  .flip-card:active .flip-card-inner-2,
+  .flip-card:focus .flip-card-inner-2 {
+      transform: rotateX(0deg);
+  }
+  
+  .flip-card:hover .flip-card-inner-3,
+  .flip-card:focus-within .flip-card-inner-3,
+  .flip-card:active .flip-card-inner-3,
+  .flip-card:focus .flip-card-inner-3 {
+      transform: rotateX(0deg);
+  }
+  
+  .flip-card:hover .flip-card-inner-4,
+  .flip-card:focus-within .flip-card-inner-4,
+  .flip-card:active .flip-card-inner-4,
+  .flip-card:focus .flip-card-inner-4 {
+      transform: rotateX(0deg);
+  }
+  
+  .flip-card:hover .flip-card-inner-5,
+  .flip-card:focus-within .flip-card-inner-5,
+  .flip-card:active .flip-card-inner-5,
+  .flip-card:focus .flip-card-inner-5 {
+      transform: rotateX(0deg);
+  }
+  
+  .flip-card:hover .flip-card-inner-6,
+  .flip-card:focus-within .flip-card-inner-6,
+  .flip-card:active .flip-card-inner-6,
+  .flip-card:focus .flip-card-inner-6 {
+      transform: rotateX(0deg);
+  }
+  
+  .flip-card:hover .flip-card-inner-7,
+  .flip-card:focus-within .flip-card-inner-7,
+  .flip-card:active .flip-card-inner-7,
+  .flip-card:focus .flip-card-inner-7 {
+      transform: rotateX(0deg);
+  }
+  
+  .flip-card:hover .flip-card-inner-8,
+  .flip-card:focus-within .flip-card-inner-8,
+  .flip-card:active .flip-card-inner-8,
+  .flip-card:focus .flip-card-inner-8 {
+      transform: rotateX(0deg);
+  }
+  
+  .flip-card:hover .flip-card-inner-9,
+  .flip-card:focus-within .flip-card-inner-9,
+  .flip-card:active .flip-card-inner-9,
+  .flip-card:focus .flip-card-inner-9 {
+      transform: rotateX(0deg);
+  }
+  
+  
+  .flip-card-front,
+  .flip-card-back {
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    color: white;
+    background-color: white;
+  }
+  
+  .flip-card-back {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    transform: rotateX(0deg);
+    text-align: center;
+  }
+  
+  .flip-card-back p{
+  
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+}
+
+/* Adjust layout of images on homepage for larger screens */
+
+@media screen and (min-width: 1000px) {
+
+  .container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+    grid-row-gap: 0px;
+    align-items: center;
+  }
+
+  .index-img1{
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    height: auto;
+  }
+  
+  .index-img2{
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    height: auto;
+  }
+  
+  .index-img3{
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+    width: 65%;
+    height: auto;
+  }
+  
+  .index-img4{
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+    width: 65%;
+    height: auto;
+  }
+
+}
