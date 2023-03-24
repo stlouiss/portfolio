@@ -36,6 +36,12 @@
   animation-fill-mode: forwards; 
 }
 
+#animation-5{ 
+  animation: fadeInAnimation ease 8s;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
+}
+
 /* Animation idea from the following webpage: https://css-tricks.com/almanac/properties/a/animation/ 
 (accessed November 30, 2020).*/
 
